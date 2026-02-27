@@ -24,7 +24,6 @@ window.onload = () => {
     loadFromLocalStorage();
     updateCompletionRate();
     initializeTheme();
-    initMobileDevInfo();
     // Initialize department selector
     onDeptChange();
 };
@@ -74,56 +73,6 @@ function toggleSidebar() {
             icon.className = 'fas fa-bars';
         }
     }
-}
-
-// ==================== MOBILE DEV INFO ====================
-function initMobileDevInfo() {
-    const mobileBox = document.getElementById('mobileDevInfo');
-    const previewWrapper = document.getElementById('previewWrapper');
-    if (!mobileBox || !previewWrapper) return;
-
-    const nameEl = document.querySelector('.dev-name');
-    const socialLinks = document.querySelector('.social-links');
-
-    const avatarClone = document.createElement('div');
-    avatarClone.className = 'avatar-mini';
-    const icon = document.createElement('i');
-    icon.className = 'fas fa-user-graduate';
-    avatarClone.appendChild(icon);
-
-    const nameMini = document.createElement('div');
-    nameMini.className = 'dev-name-mini';
-    nameMini.textContent = nameEl ? nameEl.textContent : 'Developer';
-
-    const socialMini = document.createElement('div');
-    socialMini.className = 'social-mini';
-    if (socialLinks) {
-        socialLinks.querySelectorAll('a').forEach(a => {
-            const link = a.cloneNode(true);
-            socialMini.appendChild(link);
-        });
-    }
-
-    mobileBox.appendChild(avatarClone);
-    mobileBox.appendChild(nameMini);
-    mobileBox.appendChild(socialMini);
-
-    function onScroll() {
-        if (window.innerWidth > 968) {
-            mobileBox.classList.remove('visible');
-            return;
-        }
-        if (previewWrapper.scrollTop > 40) {
-            mobileBox.classList.add('visible');
-            mobileBox.setAttribute('aria-hidden', 'false');
-        } else {
-            mobileBox.classList.remove('visible');
-            mobileBox.setAttribute('aria-hidden', 'true');
-        }
-    }
-
-    previewWrapper.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
 }
 
 // ==================== LIVE PREVIEW ====================
