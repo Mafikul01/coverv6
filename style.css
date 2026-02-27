@@ -1517,7 +1517,7 @@ select option {
 
 #download-cover-page .teacher p strong {
     display: inline-block !important;
-    width: 110px !important;
+    width: 60px !important;
     flex-shrink: 0 !important;
 }
 
@@ -1525,6 +1525,15 @@ select option {
     font-size: 16px !important;
     font-weight: bold !important;
     margin-bottom: 6px !important;
+}
+
+/* Add spacing for content after colons */
+#download-cover-page .teacher p strong + span {
+    margin-left: 8px !important;
+}
+
+#download-cover-page .row strong + span {
+    margin-left: 8px !important;
 }
 
 /* Critical: force correct layout when html2pdf renders */
@@ -1749,8 +1758,17 @@ select option {
 
 .teacher p strong {
     display: inline-block;
-    width: 85px;
+    width: 50px;
     flex-shrink: 0;
+}
+
+/* Add spacing for content after colons - Preview version */
+.teacher p strong + span {
+    margin-left: 6px;
+}
+
+.row strong + span {
+    margin-left: 6px;
 }
 
 .row {
