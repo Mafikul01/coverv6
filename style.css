@@ -1304,13 +1304,11 @@ select option {
 
 .preview-wrapper {
     flex: 1;
-    overflow: auto;
+    overflow: hidden;
     padding: 28px 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) rgba(255, 255, 255, 0.05);
     min-height: 0;
     background: transparent !important;
     /* 100% transparent */
@@ -1319,12 +1317,7 @@ select option {
 }
 
 .preview-wrapper::-webkit-scrollbar {
-    width: 5px;
-}
-
-.preview-wrapper::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 5px;
+    display: none;
 }
 
 /* ===== FIXED COVER PAGE CONTAINER WITH ZOOM-OUT ===== */
@@ -1501,11 +1494,31 @@ select option {
     font-size: 16px !important;
     margin-bottom: 6px !important;
     line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#download-cover-page .row strong {
+    display: inline-block !important;
+    width: 110px !important;
+    flex-shrink: 0 !important;
 }
 
 #download-cover-page .teacher {
     font-size: 15px !important;
     margin-bottom: 16px !important;
+}
+
+#download-cover-page .teacher p {
+    display: flex !important;
+    align-items: center !important;
+    margin: 2px 0 !important;
+}
+
+#download-cover-page .teacher p strong {
+    display: inline-block !important;
+    width: 110px !important;
+    flex-shrink: 0 !important;
 }
 
 #download-cover-page .teacher-label {
@@ -1728,10 +1741,30 @@ select option {
     font-size: 13px;
 }
 
+.teacher p {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+}
+
+.teacher p strong {
+    display: inline-block;
+    width: 85px;
+    flex-shrink: 0;
+}
+
 .row {
     margin-bottom: 4px;
     font-size: 14px;
     line-height: 1.4;
+    display: flex;
+    align-items: center;
+}
+
+.row strong {
+    display: inline-block;
+    width: 85px;
+    flex-shrink: 0;
 }
 
 .student-details {
@@ -2161,58 +2194,6 @@ body[data-theme="minimal"] .select-wrapper::after {
         padding: 75px !important;
     }
 }
-
-/* ===== MOBILE DEV INFO ===== */
-.mobile-dev-info {
-    display: none;
-    gap: 8px;
-    align-items: center;
-    color: var(--text);
-    font-size: 12px;
-    padding: 5px 8px;
-    border-radius: 7px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.mobile-dev-info.visible {
-    display: flex;
-}
-
-.mobile-dev-info .avatar-mini {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--bg);
-    flex-shrink: 0;
-}
-
-.mobile-dev-info .dev-name-mini {
-    font-weight: 700;
-    color: var(--primary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 90px;
-}
-
-.mobile-dev-info .social-mini {
-    display: flex;
-    gap: 5px;
-    margin-left: 4px;
-}
-
-.mobile-dev-info .social-mini .social-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 12px;
-}
-
 
 /* ===== MENU TOGGLE DESKTOP POSITIONING ===== */
 @media (min-width: 969px) {
