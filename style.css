@@ -1179,7 +1179,7 @@ select option {
     color: var(--bg);
     border: none;
     padding: 8px 16px;
-    border-radius: var(--radius-md);
+    border-radius: 6px;
     cursor: pointer;
     font-size: 12px;
     transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -1194,7 +1194,7 @@ select option {
     font-weight: 600;
     white-space: nowrap;
     min-width: 120px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Exo 2', 'Rajdhani', sans-serif;
 }
 
 .sidebar-download-btn i {
@@ -1657,14 +1657,25 @@ select option {
 
 .exp-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin-bottom: 20px;
 }
 
 .exp-table td {
     border: 1px solid black;
+    border-right: none;
+    border-bottom: none;
     padding: 16px 13px;
     font-size: 14px;
+}
+
+.exp-table td:last-child {
+    border-right: 1px solid black;
+}
+
+.exp-table tr:last-child td {
+    border-bottom: 1px solid black;
 }
 
 .bold {
