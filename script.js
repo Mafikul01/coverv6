@@ -154,18 +154,18 @@ function fillSampleData() {
     document.getElementById('deptSelect').value = 'cse';
     onDeptChange();
     document.getElementById('courseTitleIn').value = 'Digital Signal Processing Lab';
-    document.getElementById('codeIn').value = 'CSE-312';
+    document.getElementById('codeIn').value = 'CSE-3207';
     document.getElementById('reportNoIn').value = '01';
     document.getElementById('expNoIn').value = '01';
-    document.getElementById('expNameIn').value = 'Introduction to MATLAB';
+    document.getElementById('expNameIn').value = 'Introduction to Digital Signal Processing';
     document.getElementById('stuNameIn').value = 'Mafikul Islam';
     document.getElementById('stuIdIn').value = '232311070';
     document.getElementById('semIn').value = '6th';
     document.getElementById('secIn').value = 'B';
     onSemChange();
     onSecChange();
-    document.getElementById('t1Name').value = 'Dr. John Doe';
-    document.getElementById('t2Name').value = 'Prof. Jane Smith';
+    document.getElementById('t1Name').value = 'Mr. Donuld Trump';
+    document.getElementById('t2Name').value = 'Vladimir Putin ';
     updatePreview();
     showToast('Sample data loaded successfully!');
 }
